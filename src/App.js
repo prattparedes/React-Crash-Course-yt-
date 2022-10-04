@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect, startTransition } from 'react';
 import './App.css';
 
 const App = () => {
   const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    alert(`You've changed the counter to ` + counter)
+  }, [counter])         
 
   return (
     <div className="App">
